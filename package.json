@@ -1,5 +1,5 @@
 {
-    "version": "0.0.4",
+    "version": "0.0.8",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "files": [
@@ -68,6 +68,6 @@
         "typescript": "^3.9.10"
     },
     "dependencies": {
-        "@bauman-conference-library/interface": "^0.0.3"
+        "@bauman-conference-library/interface": "^0.0.10"
     }
 }
