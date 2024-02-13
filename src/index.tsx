@@ -1,23 +1,4 @@
-import React, { FC } from 'react';
-import { WidgetsFactory, ConferenceDateProps, NavbarProps} from '@bauman-conference-library/interface';
+import * as components from './components'
+import { LibFactory } from './libfactory'
 
-export const ConferenceDateWidget = (props: ConferenceDateProps): JSX.Element => {
-  return (
-    <div>
-      <div>{props.format}</div>
-      <div>{props.date.toString()}</div>
-    </div>
-  )
-}
-
-export class LibFactory implements WidgetsFactory {
-  
-  getConferenceDateWidget(): FC<ConferenceDateProps> {
-    return ConferenceDateWidget;
-  }
-
-  getNavbar(): FC<NavbarProps> {
-    throw new Error("not implemented")
-  }
-
-}
+export { components, LibFactory }
