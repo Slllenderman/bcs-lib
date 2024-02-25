@@ -17,8 +17,8 @@
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "sb": "storybook dev -p 6006",
+    "build-sb": "storybook build"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -76,7 +76,7 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@bauman-conference-library/interface": "^0.0.4",
+    "@bauman-conference-library/interface": "^0.1.2",
     "@mui/icons-material": "^5.14.16",
     "@mui/material": "^5.14.17",
     "storybook": "^7.6.9"
