@@ -1,8 +1,4 @@
-import React from 'react';
-import { IConferenceDateWidget } from "@bauman-conference-library/interface/dist/confrence-date-widget";
+import * as components from './components'
+import { LibFactory } from './libfactory'
 
-export const ConferenceDateWidget = (props: IConferenceDateWidget) =>{
-  return (
-    <div>{props.date.toString()}</div>
-  )
-}
+export { components, LibFactory }
