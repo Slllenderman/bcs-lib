@@ -1,8 +1,17 @@
 import { FC } from "react";
-import { FCWC, props, Widget, WidgetsFactory } from "@bauman-conference-library/interface";
+import { FCWC, props, Widget, WidgetsFactory, WidgetTheme } from "@bauman-conference-library/interface";
 
 export class LibFactory implements WidgetsFactory {
-  
+
+    setTheme(theme: WidgetTheme): void {
+        theme
+        throw new Error("not implemented")
+    }
+
+    getTheme(): WidgetTheme {
+        throw new Error("not implemented")
+    }
+
     getNavbar(): FCWC<props.NavbarProps> {
         throw new Error("not implemented")
     }
