@@ -9,6 +9,7 @@ const breakpoints = createBreakpoints({
     desktop: 1280,
   }
 })
+
 export const theme = createTheme(
   {
     breakpoints: breakpoints,

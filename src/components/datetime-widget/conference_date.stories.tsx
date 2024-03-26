@@ -1,5 +1,5 @@
 import { Widget } from '@bauman-conference-library/interface'
-import { ConferenceDate } from './conference_date'
+import { ConferenceDate } from '.'
 import { Meta, StoryObj } from '@storybook/react'
 
 
