@@ -15,6 +15,10 @@ export const Default: Story = {
     args: {
         children: [
             <Link to="/">First</Link>,
+            <Link to="/">First</Link>,
+            <Link to="/">First</Link>,
+            <Link to="/">First</Link>,
+            <Link to="/">First</Link>,
             <Link to="/">Second</Link>
         ]
     },
