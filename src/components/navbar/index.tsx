@@ -1,21 +1,45 @@
 import { props as iprops } from "@bauman-conference-library/interface";
-import { Box, Link } from "@mui/material";
+import { Box, Link, Button } from "@mui/material";
 import React, { PropsWithChildren } from "react";
-import { SubHeader } from "./sub-header";
+import { IIASU_icon } from "./iiasu_icon";
+
 
 export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Element => {
     
+    const sub_header = {
+        display: 'flex',
+        gap: '16px',
+        mb: '16px',
+        justifyContent: 'space-between'
+    }
+
+    const header = {
+        display: 'flex',
+        gap: '16px',
+        py: '16px',
+        justifyContent: 'space-between',
+        boxSizing: 'border-box',
+        borderBottom: '1px solid black',
+        borderTop: '1px solid black'
+    }
+
     return(
-        <>
-            <SubHeader></SubHeader>
-            <Box display='flex' component='nav' gap='16px' justifyContent='space-between' boxSizing='border-box' py='16px' borderBottom='1px solid #444' borderTop='1px solid black' mx='auto'>
-                { React.Children.map(props.children, (link) => 
-                    <Link>
-                        { link }
-                    </Link>
-                )}
+        <Box>
+            <Box sx={sub_header}>
+                <IIASU_icon></IIASU_icon>
+                <Box>
+                    <Button color='inherit'>RUS</Button>
+                    <Button variant="outlined" sx={{textTransform:'none'}} color='info'>Войти</Button>
+                </Box>
             </Box>
-        </>
+            <Box component='nav' sx={header}>
+                { 
+                    React.Children.map(
+                        props.children, (link) => <Link> { link } </Link>
+                    )
+                }
+            </Box>
+        </Box>
     )
 }
 
