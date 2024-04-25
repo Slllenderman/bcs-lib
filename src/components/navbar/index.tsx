@@ -1,8 +1,8 @@
 import { props as iprops } from "@bauman-conference-library/interface";
-import { Box, Link, Button } from "@mui/material";
+import { Box, Link, Button, ThemeProvider } from "@mui/material";
 import React, { PropsWithChildren } from "react";
 import { IIASU_icon } from "./iiasu_icon";
-
+import { theme } from "../../themes";
 
 export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Element => {
     
@@ -24,22 +24,24 @@ export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Eleme
     }
 
     return(
-        <Box>
-            <Box sx={sub_header}>
-                <IIASU_icon></IIASU_icon>
-                <Box>
-                    <Button color='inherit'>RUS</Button>
-                    <Button variant="outlined" sx={{textTransform:'none'}} color='info'>Войти</Button>
+        <ThemeProvider theme={theme}>
+            <Box>
+                <Box sx={sub_header}>
+                    <IIASU_icon></IIASU_icon>
+                    <Box>
+                        <Button color='inherit'>RUS</Button>
+                        <Button variant="outlined" sx={{textTransform:'none'}} color='info'>Войти</Button>
+                    </Box>
+                </Box>
+                <Box component='nav' sx={header}>
+                    { 
+                        React.Children.map(
+                            props.children, (link) => <Link> { link } </Link>
+                        )
+                    }
                 </Box>
             </Box>
-            <Box component='nav' sx={header}>
-                { 
-                    React.Children.map(
-                        props.children, (link) => <Link> { link } </Link>
-                    )
-                }
-            </Box>
-        </Box>
+        </ThemeProvider>
     )
 }
 
