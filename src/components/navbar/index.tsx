@@ -5,7 +5,6 @@ import { IIASU_icon } from "./iiasu_icon";
 
 
 export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Element => {
-    
     const sub_header = {
         display: 'flex',
         gap: '16px',
