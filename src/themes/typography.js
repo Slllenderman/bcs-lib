@@ -1,31 +1,25 @@
 import { createTheme } from "@mui/material";
 
 export const typography_theme = {
-    h0: {
-        fontFamily: `"Brygada 1918", serif`,
-        fontStyle: 'normal',
-        fontWeight: 600,
-        fontSize: 44,
-        lineHeight: '52px',
-    },
     h1: {
-        fontFamily: `"Brygada 1918", serif`,
+        fontFamily: '"Brygada 1918"',
+        fontSize: 64,
+        fontWeight: '600',
         fontStyle: 'normal',
-        fontWeight: 600,
-        fontSize: 32,
-        lineHeight: '37px',
+        lineHeight: '72px',
+        whiteSpace: 'nowrap'
     },
     h2: {
         fontFamily: `"Inter", sans-serif`,
         fontStyle: 'normal',
-        fontWeight: 400,
-        fontSize: 24,
+        fontWeight: 500,
+        fontSize: 48,
         lineHeight: '29px',
     },
     h2_bold: {
         fontFamily: `"Inter", sans-serif`,
         fontStyle: 'normal',
-        fontWeight: 500,
+        fontWeight: 400,
         fontSize: 24,
         lineHeight: '29px',
     },
@@ -34,7 +28,7 @@ export const typography_theme = {
         fontStyle: 'normal',
         fontWeight: 400,
         fontSize: 20,
-        lineHeight: '24px',
+        lineHeight: '29px',
     },
     h3_bold: {
         fontFamily: `"Inter", sans-serif`,

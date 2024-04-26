@@ -45,35 +45,17 @@ export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element =
         maxWidth: '1500px !important'
     }
 
-    const format_typography = {
-        fontFamily: 'Inter',
-        fontSize: 24 * props.font_size,
-        fontWeight: '400',
-        lineHeight: '29px',
-        display: 'inline'
-    }
-
-    const date_typography = {
-        fontFamily: '"Brygada 1918"',
-        fontSize: 64 * props.font_size,
-        fontWeight: '600',
-        color: 'primary.dark',
-        fontStyle: 'italic',
-        lineHeight: '72px',
-        whiteSpace: 'nowrap'
-    }
-
     return (
         !props.visibility ? <></> : 
         <ThemeProvider theme = {theme}>
             <Container sx = {container_css}>
                 <Box display={'flex'} alignItems={'center'}>
-                    <Typography sx = {format_typography}>
+                    <Typography variant='h3' fontSize={24 * props.font_size}>
                         {getFormat(props.format)}
                     </Typography>
                 </Box>
                 <Box>
-                    <Typography sx = {date_typography}>
+                    <Typography variant='h1' color='primary.dark' fontStyle="italic">
                         {getFormatedDate(props.start_date, props.end_date)}
                     </Typography>
                 </Box>   
