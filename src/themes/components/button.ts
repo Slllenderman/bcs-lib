@@ -1,7 +1,5 @@
-import { createTheme } from '@mui/material';
 
-
-export const components_theme = {
+export const button_theme = {
   MuiButton: {
     styleOverrides: {
 		root: {

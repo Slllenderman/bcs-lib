@@ -30,32 +30,22 @@ export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element =
         return samples[format]
     }
 
-    const width: number = 1130 * props.size
-
-    const container_css = { 
-        width: width, 
-        padding: `${56 * props.height}px ${Math.min(width * 0.05, 125)}px !important`,
-        borderRadius: "3px", 
-        backgroundColor: 'primary.main', 
-        display: 'flex', 
-        justifyContent: 'center',
-        alignContent: 'center',
-        flexDirection: 'row',
-        gap: '36px',
-        maxWidth: '1500px !important'
+    const container_css = {
+        padding: `56px 56px !important`,
+        gap: '36px'
     }
 
     return (
         !props.visibility ? <></> : 
         <ThemeProvider theme = {theme}>
-            <Container sx = {container_css}>
+            <Container variant='accent' sx = {container_css}>
                 <Box display={'flex'} alignItems={'center'}>
-                    <Typography variant='h3' fontSize={24 * props.font_size}>
+                    <Typography variant='h3' fontSize_koef={props.font_size}>
                         {getFormat(props.format)}
                     </Typography>
                 </Box>
                 <Box>
-                    <Typography variant='h1' color='primary.dark' fontStyle="italic">
+                    <Typography variant='title' color='primary.dark' fontStyle="italic" fontSize_koef={props.font_size}>
                         {getFormatedDate(props.start_date, props.end_date)}
                     </Typography>
                 </Box>   
