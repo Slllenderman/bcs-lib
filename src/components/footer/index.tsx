@@ -1,6 +1,5 @@
 import React  from "react";
 import { Box } from "@mui/material";
-import { props as iprops } from "@bauman-conference-library/interface";
 import { Info } from "./info";
 import { Connection } from "./connection"
 
@@ -14,11 +13,7 @@ export const Footer = (): JSX.Element => {
         padding: "48px 56px 32px 56px",
 
     }
-    const line = {
-        bgcolor: "#CFCFCF",
-        border: "1px",
-        height: "1px"
-    }
+    
 
     return (
         <Box sx={ footer }>

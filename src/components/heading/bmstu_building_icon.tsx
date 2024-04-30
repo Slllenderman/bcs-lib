@@ -1,5 +1,4 @@
 import React from "react"
-import { SvgIcon } from "@mui/material"
 
 export const BMSTU_buiding_icon = () => {
     

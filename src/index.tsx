@@ -1,4 +1,4 @@
 import * as components from './components'
-import { LibFactory } from './libfactory'
+//import { LibFactory } from './libfactory'
 
-export { components, LibFactory }
+export { components } //, LibFactory }

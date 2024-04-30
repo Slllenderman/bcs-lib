@@ -71,7 +71,7 @@ export const Heading = (props: iprops.ConferenceHeadingProps): JSX.Element => {
                 </Typography>
             </Box>
             <Box>
-                <Link to={ props.part_href } style={ take_part }> Участвовать </Link>
+                <Link to={ props.part_href as string } style={ take_part }> Участвовать </Link>
             </Box>
         </Box>
     );
