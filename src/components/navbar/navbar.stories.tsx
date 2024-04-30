@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Link } from '@mui/material'
 import { Navbar } from '.';
 import { Link as RouterLink } from 'react-router-dom'
+import { Widget } from '@bauman-conference-library/interface';
 
 const meta: Meta = {
     title: 'Header',
@@ -21,6 +22,7 @@ export const Default: Story = {
             <Link to="/" component={RouterLink}>Тематика</Link>,
             <Link to="/" component={RouterLink}>Требования</Link>,
             <Link to="/" component={RouterLink}>ИИАСУ'23</Link>,
-        ]
+        ],
+        ... new Widget()
     },
 };

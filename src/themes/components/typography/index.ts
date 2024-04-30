@@ -1,23 +1,20 @@
+import { title_variants } from "./title";
+import { h_variants } from "./h";
 
 export const typography_theme = {
-
-    h1: {
-        fontFamily: '"Brygada 1918"',
-        fontSize: 64,
-        fontWeight: '600',
-        fontStyle: 'normal',
-        lineHeight: '72px',
-        whiteSpace: 'nowrap'
-    },
-    title: ({ownerState, theme}:any) => {
-        console.log(ownerState)
-        console.log(theme)
-        return {
-            fontSize: '144px'
-        }
+    MuiTypography: {
+        styleOverrides: {
+            root: {
+                fontFamily: 'Inter',
+                color: 'black',
+            }
+        },
+        variants: [
+            ...title_variants,
+            ...h_variants
+        ]
     }
 }
-
 
 declare module '@mui/material/styles' 
 {
@@ -34,6 +31,7 @@ declare module '@mui/material'
 {
     interface TypographyOwnProps {
         fontSize_koef?: number;
+        colored?: boolean;
     }
     interface TypographyPropsVariantOverrides {
         title: true;

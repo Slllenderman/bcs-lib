@@ -16,7 +16,7 @@ export const container_theme = {
                 style: ({ theme }: any) => (
                     {
                         backgroundColor: theme.palette.primary.main,
-                        borderRadius: "3px"
+                        borderRadius: '3px'
                     }
                 )
             }

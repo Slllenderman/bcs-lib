@@ -1,10 +1,10 @@
-import { props as iprops } from "@bauman-conference-library/interface";
-import { Box, Button, ThemeProvider, Typography, Container } from "@mui/material";
-import React, { PropsWithChildren } from "react";
-import { IIASU_icon } from "./iiasu_icon";
-import { theme } from "../../themes";
+import React, { PropsWithChildren } from 'react';
+import { props as iprops } from '@bauman-conference-library/interface';
+import { Box, Button, ThemeProvider, Typography, Container } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom'
-import { Link as MuiLink} from '@mui/material'
+import { Link as MuiLink } from '@mui/material'
+import { IIASU_icon } from './iiasu_icon';
+import { theme } from '../../themes';
 
 export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Element => {
     
@@ -36,18 +36,19 @@ export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Eleme
             <Container>
                 <Box width='100%'>
                     <Box sx={sub_header}>
-                        <MuiLink component={RouterLink} to="/" variant="h3" sx={iiasu_navinline}>
+                        <MuiLink component={RouterLink} to='/' variant='h2' 
+                                fontSize_koef={props.font_size} sx={iiasu_navinline}>
                             <IIASU_icon></IIASU_icon>
                             ИИАСУ'24
                         </MuiLink>
                         <Box sx={iiasu_navinline}>
                             <Button color='inherit'>
-                                <Typography fontSize={18}>
+                                <Typography variant='h2' fontSize_koef={props.font_size}>
                                     RUS
                                 </Typography>
                             </Button>
-                            <Button variant="outlined" sx={{textTransform:'none'}} color='info'>
-                                <Typography fontSize={18}>
+                            <Button variant='outlined' sx={{textTransform:'none'}} color='info'>
+                                <Typography variant='h2' fontSize_koef={props.font_size}>
                                     Войти
                                 </Typography>
                             </Button>
@@ -56,7 +57,7 @@ export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Eleme
                     <Box component='nav' sx={header}>
                         { 
                             React.Children.map(
-                                props.children, (link) => { return link }
+                                props.children, (link) => (link)
                             )
                         }
                     </Box>

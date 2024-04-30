@@ -1,5 +1,3 @@
-import { Link as RouterLink } from 'react-router-dom'
-
 export const link_theme = {
     MuiLink: {
         styleOverrides: {
@@ -9,7 +7,8 @@ export const link_theme = {
             }
         }, 
         defaultProps: {
-            variant: 'h3'
+            variant: 'h2',
+            fontSize_koef: 1
         }
     }
 }
