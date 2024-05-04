@@ -1,7 +1,6 @@
-/*import { FC } from "react";
-import { FCWC, props, Widget, WidgetsFactory, WidgetTheme } from "@bauman-conference-library/interface";
 
-export class LibFactory implements WidgetsFactory {
+
+export class LibFactory {} /*implements WidgetsFactory {
 
     setTheme(theme: WidgetTheme): void {
         theme

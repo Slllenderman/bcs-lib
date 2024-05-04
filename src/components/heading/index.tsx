@@ -20,14 +20,14 @@ export const Heading = (props: iprops.ConferenceHeadingProps): JSX.Element => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '26px'
     };
 
     const text = {
+        marginTop: "26px",
+        marginBottom: "40px",
         display: "flex",
         flexDirection: "column",
-        gap: '16px',
-        marginBottom: "40px"
+        gap: '16px'
     };
 
     const subtitle_typography = {
@@ -36,7 +36,8 @@ export const Heading = (props: iprops.ConferenceHeadingProps): JSX.Element => {
         fontWeight: '400',
         lineHeight: '24.2px',
         textAlign: 'center',
-        textTransform: "uppercase"
+        textTransform: "uppercase",
+        color: "#8B8B8B"
     };
 
     const title_typography = {
@@ -46,19 +47,21 @@ export const Heading = (props: iprops.ConferenceHeadingProps): JSX.Element => {
         fontWeight: '600',
         lineHeight: '51.48px',
         textAlign: 'center',
-        textTransform: "uppercase",
     };
 
-    const take_part = {
+
+    const take_part_container = {
         padding: "16px 59.5px",
         backgroundColor: "#22BEC5",
+    }
+
+    const take_part = {
         fontFamily: 'Inter',
         fontSize: "24px",
         fontWeight: '500',
         lineHeight: '29px',
         color: "#FFFFFF",
         textDecoration: "none",
-        
     }
     return (
         <Box sx={ heading }>
@@ -70,8 +73,8 @@ export const Heading = (props: iprops.ConferenceHeadingProps): JSX.Element => {
                 <Typography variant="h1" sx ={ title_typography }> {getTitle(props.title || "")}
                 </Typography>
             </Box>
-            <Box>
-                <Link to={ props.part_href as string } style={ take_part }> Участвовать </Link>
+            <Box style={take_part_container}>
+                <Link to={ props.part_href } component={ Link } style={ take_part }> Участвовать </Link>
             </Box>
         </Box>
     );
