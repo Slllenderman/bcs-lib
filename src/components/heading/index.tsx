@@ -36,7 +36,8 @@ export const Heading = (props: iprops.ConferenceHeadingProps): JSX.Element => {
         fontWeight: '400',
         lineHeight: '24.2px',
         textAlign: 'center',
-        textTransform: "uppercase"
+        textTransform: "uppercase",
+        color: "#8B8B8B"
     };
 
     const title_typography = {
