@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material";
-import { Link } from 'react-router-dom';
+import { Box, Typography, Link } from "@mui/material";
+import { Link as RouterLink } from 'react-router-dom';
 import React  from "react";
 import { props as iprops } from "@bauman-conference-library/interface";
 import { BMSTU_buiding_icon }from './bmstu_building_icon';
@@ -74,7 +74,7 @@ export const Heading = (props: iprops.ConferenceHeadingProps): JSX.Element => {
                 </Typography>
             </Box>
             <Box style={take_part_container}>
-                <Link to={ props.part_href } component={ Link } style={ take_part }> Участвовать </Link>
+                <Link to={ props.part_href } component={ RouterLink } style={ take_part }> Участвовать </Link>
             </Box>
         </Box>
     );
