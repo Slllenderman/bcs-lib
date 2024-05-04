@@ -1,5 +1,5 @@
 import { Navbar } from "./navbar";
-import { ConferenceDate } from "./datetime-widget"
+import { ConferenceDate } from "./datetime"
 import { Footer } from "./footer"
 import { Heading } from "./heading"
 
