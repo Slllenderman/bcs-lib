@@ -1,6 +1,6 @@
 import React from 'react'
 import { props as iprops } from '@bauman-conference-library/interface'
-import { theme } from '../../themes'
+import { theme } from '../../../themes'
 import { Container, ThemeProvider, Typography, Box } from '@mui/material'
 
 

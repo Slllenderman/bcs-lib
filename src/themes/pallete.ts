@@ -1,7 +1,6 @@
 
 
-export const pallete_theme = 
-{
+export const pallete_theme = {
   primary: {
     main: '#E7F3F5',
     dark: '#22BEC5'

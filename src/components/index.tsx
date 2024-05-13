@@ -1,13 +1,12 @@
-import { Navbar } from "./navbar";
-import { ConferenceDate } from "./datetime"
-import { Footer } from "./footer"
-import { Heading } from "./heading"
-import { Logo } from "./logo";
-import { ConferenceDescription } from "./confdescription"
-import { ConferenceLocation } from "./conflocation";
-import { UserCard } from "./userCard"
+import { Navbar } from "./static/navbar";
+import { ConferenceDate } from "./info/datetime"
+import { Footer } from "./static/footer"
+import { Heading } from "./info/heading"
+import { Logo } from "./addons/logo/logo";
+import { ConferenceDescription } from "./info/confdescription"
+import { ConferenceLocation } from "./info/conflocation";
 
-export { Navbar, ConferenceDate, Footer, Heading, Logo, ConferenceDescription, ConferenceLocation, UserCard }
+export { Navbar, ConferenceDate, Footer, Heading, Logo, ConferenceDescription, ConferenceLocation }
 
 import { Link, Grid, Typography, Container } from "@mui/material"
  

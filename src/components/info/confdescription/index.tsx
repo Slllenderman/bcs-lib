@@ -1,7 +1,7 @@
 import React from "react"
 import { Grid, ThemeProvider, Typography } from "@mui/material"
 import { props as iprops } from "@bauman-conference-library/interface"
-import { theme } from "../../themes"
+import { theme } from "../../../themes"
 
 export const ConferenceDescription = (props: iprops.ConferenceDescription) => {
     return (

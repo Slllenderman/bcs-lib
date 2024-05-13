@@ -4,7 +4,7 @@ import { Box, Button, ThemeProvider, Typography, Container } from '@mui/material
 import { Link as RouterLink } from 'react-router-dom'
 import { Link as MuiLink } from '@mui/material'
 import { IIASU_icon } from './iiasu_icon';
-import { theme } from '../../themes';
+import { theme } from '../../../themes';
 
 export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Element => {
     const sub_header = {

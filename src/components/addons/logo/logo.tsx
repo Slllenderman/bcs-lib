@@ -1,7 +1,7 @@
 import React from 'react'
 import { props as iprops } from '@bauman-conference-library/interface'
 import { Box, ThemeProvider, Typography } from '@mui/material'
-import { theme } from '../../themes'
+import { theme } from '../../../themes'
 
 export const Logo = (props: iprops.ConferenceLogo) => {
     return (

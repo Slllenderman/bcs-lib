@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, Typography, Box, ThemeProvider, Button, Link } from "@mui/material"
 import { props as iprops} from "@bauman-conference-library/interface"
-import { theme } from "../../themes"
+import { theme } from "../../../themes"
 import { Link as RouterLink } from "react-router-dom"
 
 export const ConferenceLocation = (props: iprops.ConferenceLoactionProps) => {
