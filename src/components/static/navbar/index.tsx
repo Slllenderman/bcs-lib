@@ -35,19 +35,13 @@ export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Eleme
             <Container>
                 <Box width='100%'>
                     <Box sx={sub_header}>
-                        <MuiLink component={RouterLink} to='/' variant='h2' 
-                                fontSize_koef={props.font_size} sx={iiasu_navinline}>
+                        <MuiLink component={RouterLink} to='/' variant='h2' fontK={props.font_size} sx={iiasu_navinline}>
                             <IIASU_icon></IIASU_icon>
                             ИИАСУ'24
                         </MuiLink>
-                        <Box sx={iiasu_navinline}>
-                            <Button color='inherit'>
-                                <Typography variant='h2' fontSize_koef={props.font_size}>
-                                    RUS
-                                </Typography>
-                            </Button>
-                            <Button variant='outlined' sx={{textTransform:'none'}} color='info'>
-                                <Typography variant='h2' fontSize_koef={props.font_size}>
+                        <Box sx={iiasu_navinline}> 
+                            <Button variant='outlined' onClick={props.signin_callback} sx={{textTransform:'none'}} color='info'>
+                                <Typography variant='h2' fontK={props.font_size}>
                                     Войти
                                 </Typography>
                             </Button>

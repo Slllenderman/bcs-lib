@@ -1,21 +1,31 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, ThemeProvider, Typography } from '@mui/material';
+import { theme } from '../../../themes'
 
-export const Description = (props: PropsWithChildren<{ title: string | ReactElement, shift?: number}>) => {
+interface DescriptionProps {
+    title: string | ReactElement;
+    variant: "h1" | "h2" | "h3";
+    width?: number
+    shift?: number;
+}
+
+export const Description = (props: PropsWithChildren<DescriptionProps>) => {
     return(
-        <Box display="flex" flexDirection="column">
-            { 
-                typeof props.title === "string" ?
-                <Typography variant='subtitle1' marginBottom="20px">
-                    { props.title }
-                </Typography>
-                : props.title
-            }
-            <Box marginLeft={props.shift}>
-                {
-                    React.Children.map(props.children, child => child)
+        <ThemeProvider theme={theme}>
+            <Box display="flex" flexDirection="column" width={props.width ? props.width : 400 }>
+                { 
+                    typeof props.title === "string" ?
+                    <Typography variant='subtitle1' fontK={1} marginBottom="20px">
+                        { props.title }
+                    </Typography>
+                    : props.title
                 }
+                <Box marginLeft={`${props.shift}px`}>
+                    {
+                        React.Children.map(props.children, child => child)
+                    }
+                </Box>
             </Box>
-        </Box>
+        </ThemeProvider>
     )
 }
