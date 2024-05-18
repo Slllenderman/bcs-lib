@@ -30,7 +30,7 @@ declare module '@mui/material/styles'
 declare module '@mui/material'
 {
     interface TypographyOwnProps {
-        fontSize_koef?: number;
+        fontK?: number;
         colored?: boolean;
     }
     interface TypographyPropsVariantOverrides {

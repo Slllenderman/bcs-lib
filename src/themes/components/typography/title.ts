@@ -5,22 +5,17 @@ export const title_variants = [
         },
         style: ({ ownerState }: any) => ({
             fontFamily: '"Brygada 1918"',
-            fontSize: `${4 * ownerState.fontSize_koef}rem`,
-            lineHeight: `${4.5  * ownerState.fontSize_koef}rem`,
+            fontSize: `${ownerState.fontK ? 4 * ownerState.fontK : 4}rem`,
+            lineHeight: `${ownerState.fontK ? 4.5  * ownerState.fontK : 4.5}rem`,
             fontWeight: 600,
             whiteSpace: 'nowrap'
         })
     },
     {
         props: {
-            variant: 'title', colored: true
+            colored: true
         },
-        style: ({ ownerState, theme }: any) => ({
-            fontFamily: '"Brygada 1918"',
-            fontSize: `${4 * ownerState.fontSize_koef}rem`,
-            lineHeight: `${4.5  * ownerState.fontSize_koef}rem`,
-            fontWeight: 600,
-            whiteSpace: 'nowrap',
+        style: ({ theme }: any) => ({
             fontStyle: 'Italic',
             color: theme.pallete.primary.main
         })
@@ -31,8 +26,9 @@ export const title_variants = [
         },
         style: ({ ownerState }: any) => ({
             fontFamily: '"Brygada 1918"',
-            fontSize: `${2.75 * ownerState.fontSize_koef}rem`,
-            lineHeight: `${3.25  * ownerState.fontSize_koef}rem`
+            fontSize: `${ownerState.fontK ? 2.75 * ownerState.fontK : 2.75}rem`,
+            lineHeight: `${ownerState.fontK ? 3.25  * ownerState.fontK : 3.25}rem`,
+            fontWeight: 600
         })
     },
     {
@@ -41,8 +37,8 @@ export const title_variants = [
         },
         style: ({ ownerState }: any) => ({
             fontFamily: '"Brygada 1918"',
-            fontSize: `${2  * ownerState.fontSize_koef}rem`,
-            lineHeight: `${2.3  * ownerState.fontSize_koef}rem`
+            fontSize: `${ownerState.fontK ? 2 * ownerState.fontK : 2}rem`,
+            lineHeight: `${ownerState.fontK ? 2.3  * ownerState.fontK : 2.3}rem`,
         })
     },
 ]

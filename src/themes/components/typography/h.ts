@@ -4,8 +4,8 @@ export const h_variants = [
             variant: 'h1'
         },
         style: ({ ownerState }: any) => ({
-            fontSize: `${1.5  * ownerState.fontSize_koef}rem`,
-            lineHeight: `${1.8  * ownerState.fontSize_koef}rem`,
+            fontSize: `${ownerState.fontK ? 1.5 * ownerState.fontK : 1.5}rem`,
+            lineHeight: `${ownerState.fontK ? 1.8  * ownerState.fontK : 1.8}rem`,
             fontWeight: 400
         })
     },
@@ -14,9 +14,9 @@ export const h_variants = [
             variant: 'h2'
         },
         style: ({ ownerState }: any) => ({
-            fontSize: `${1.25  * ownerState.fontSize_koef}rem`,
-            lineHeight: `${1.5  * ownerState.fontSize_koef}rem`,
-            fontWeight: 400
+            fontSize: `${ownerState.fontK ? 1.25  * ownerState.fontK : 1.25}rem`,
+            lineHeight: `${ownerState.fontK ? 1.5  * ownerState.fontK : 1.5}rem`,
+            fontWeight: 500
         })
     },
 ]

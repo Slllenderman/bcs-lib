@@ -14,7 +14,7 @@ export const Default: Story = {
 }
 
 const meta: Meta = {
-    title: 'Conference article',
+    title: 'Account/Conference article',
     component: ArticleCard
 }
 

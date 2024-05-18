@@ -6,7 +6,7 @@ import { Link as RouterLink } from 'react-router-dom'
 import { Widget } from '@bauman-conference-library/interface';
 
 const meta: Meta = {
-    title: 'Header',
+    title: 'Static/Header',
     component: Navbar
 };
 

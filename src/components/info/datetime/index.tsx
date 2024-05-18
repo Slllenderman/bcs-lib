@@ -1,10 +1,11 @@
 import React from 'react'
-import { props as iprops } from '@bauman-conference-library/interface'
+import { props as iprops, useWidget} from '@bauman-conference-library/interface'
 import { theme } from '../../../themes'
 import { Container, ThemeProvider, Typography, Box } from '@mui/material'
 
-
 export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element => {
+    
+    props = useWidget(props)
     
     const getFormatedDate = (sdate: Date|number, edate: Date|number): String => {
         enum months {
@@ -21,12 +22,12 @@ export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element =
                `${sday}–${eday} ${month} ${year}г.` : `${sday} ${month} ${year}г.`
     }
     
-    const getFormat = (format: iprops.ConferenceFormat): String => {
-        const samples = [
-            "Конференция проходит в очном формате",
-            "Конференция проходит в онлайн формате",
-            "Конференция проходит в очном и онлайн формате"
-        ]
+    const getFormat = (format: "online" | "offline" | "both"): String => {
+        const samples = {
+            "offline": "Конференция проходит в очном формате",
+            "online": "Конференция проходит в онлайн формате",
+            "both": "Конференция проходит в очном и онлайн формате"
+        }
         return samples[format]
     }
 
@@ -47,12 +48,12 @@ export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element =
         <ThemeProvider theme = {theme}>
             <Container variant='accent' sx = {container_css}>
                 <Box display='flex' alignItems='center'>
-                    <Typography variant='h1' fontSize_koef={props.font_size}>
+                    <Typography variant='h1' fontK={props.font_size}>
                         {getFormat(props.format)}
                     </Typography>
                 </Box>
                 <Box display='flex' alignItems='center'>
-                    <Typography variant='title' fontSize_koef={props.font_size} sx={date_font}>
+                    <Typography variant='title' fontK={props.font_size} sx={date_font}>
                         {getFormatedDate(props.start_date, props.end_date)}
                     </Typography>
                 </Box>   

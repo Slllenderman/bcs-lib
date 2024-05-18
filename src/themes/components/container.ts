@@ -1,3 +1,5 @@
+
+
 export const container_theme = {
     MuiContainer: {
         styleOverrides: {
@@ -5,7 +7,9 @@ export const container_theme = {
                 display: 'flex', 
                 justifyContent: 'center',
                 alignContent: 'center',
-                flexDirection: 'row'
+                flexDirection: 'row',
+                paddingLeft: '0 !important',
+                paddingRight: '0 !important'
             }
         },
         variants: [

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { Widget } from '@bauman-conference-library/interface'
 import { Heading } from '.';
@@ -16,7 +15,7 @@ export const Default: Story = {
 }
 
 const meta: Meta = {
-    title: 'Heading',
+    title: 'Info/Heading',
     component: Heading
 };
 

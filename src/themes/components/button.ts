@@ -3,7 +3,7 @@ export const button_theme = {
   MuiButton: {
     styleOverrides: {
 		root: {
-			textTransform: 'initial'
+			textTransform: 'initial' 
 		}
     },
     variants: [
@@ -33,7 +33,11 @@ export const button_theme = {
 				border: '3px solid #00A8B0',
 				padding: '8px 20px',
 				color: '#00A8B0',
-
+				fontFamily: 'Inter',
+				fontSize: '24px',
+				lineHeight: '29px',
+				fontWeight: 500,
+				
 				":hover": {
 					bgcolor: '#00A8B01A',
 					border: '3px solid #00A8B0',
