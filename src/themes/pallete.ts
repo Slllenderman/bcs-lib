@@ -2,12 +2,14 @@
 
 export const pallete_theme = {
   primary: {
-    main: '#E7F3F5',
-    dark: '#22BEC5'
+    light: '#E7F3F5',
+    main: '#22BEC5',
+    dark: ''
   },
   text: {
     primary: '#22BEC5',
     secondary: '#000000',
-    disabled: '#00000080'
+    disabled: '#00000080',
+    grey: '#9F9F9F'
   }
 }

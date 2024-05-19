@@ -50,8 +50,8 @@ export const button_theme = {
 		},
 		{
 			props: {variant: 'contained'},
-			style: {
-				bgcolor: '#22BEC5',
+			style: ({ theme }: any) => ({ 
+				bgcolor: theme.palette.primary.dark,
 				borderRadius: 0,
 				display: 'flex',
 				flexDirection: 'row',
@@ -61,17 +61,11 @@ export const button_theme = {
 				color: '#FFFFFF',
 
 				":hover": {
-					bgcolor: '#0FA2A8',
+					bgcolor: '#22BEC5',
 					color: '#FFFFFF',
 					padding: '16px 28px',
 				},
-
-				":disabled": {
-					bgcolor: '#CFCFCF',
-					color: '#FFFFFF',
-					padding: '16px 28px',
-				},
-			},
+			})
 		},
 		{
 			props: {variant: 'mobile_nav'},

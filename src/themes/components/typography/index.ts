@@ -32,6 +32,7 @@ declare module '@mui/material'
     interface TypographyOwnProps {
         fontK?: number;
         colored?: boolean;
+        weighted?: boolean;
     }
     interface TypographyPropsVariantOverrides {
         title: true;

@@ -17,7 +17,7 @@ export const title_variants = [
         },
         style: ({ theme }: any) => ({
             fontStyle: 'Italic',
-            color: theme.pallete.primary.main
+            color: theme.palette.primary.main
         })
     },
     {
@@ -39,6 +39,7 @@ export const title_variants = [
             fontFamily: '"Brygada 1918"',
             fontSize: `${ownerState.fontK ? 2 * ownerState.fontK : 2}rem`,
             lineHeight: `${ownerState.fontK ? 2.3  * ownerState.fontK : 2.3}rem`,
+            fontWeight: 600
         })
     },
 ]

@@ -5,7 +5,8 @@ type Story = StoryObj<typeof Title>
 
 export const Default: Story = {
     args: {
-        children: 'Заголовок'
+        children: 'Искусственный интеллект в автоматизированных системах управления и обработки данных',
+        brushCount: 2
     }
 }
 

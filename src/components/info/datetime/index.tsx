@@ -31,22 +31,17 @@ export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element =
         return samples[format]
     }
 
-    const container_css = {
-        padding: `56px 56px !important`,
-        gap: '36px'
-    }
-
     const date_font = {
         whiteSpace: 'nowrap',
         fontStyle: 'Italic',
-        color: 'primary.dark',
+        color: 'primary.main',
         fontWeight: 600
     }
 
     return (
         !props.visibility ? <></> : 
         <ThemeProvider theme = {theme}>
-            <Container variant='accent' sx = {container_css}>
+            <Container variant='accent' sx={{gap: '36px', padding: `56px 56px !important`}}>
                 <Box display='flex' alignItems='center'>
                     <Typography variant='h1' fontK={props.font_size}>
                         {getFormat(props.format)}

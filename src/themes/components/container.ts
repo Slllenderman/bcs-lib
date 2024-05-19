@@ -19,7 +19,7 @@ export const container_theme = {
                 },
                 style: ({ theme }: any) => (
                     {
-                        backgroundColor: theme.palette.primary.main,
+                        backgroundColor: theme.palette.primary.light,
                         borderRadius: '3px'
                     }
                 )
