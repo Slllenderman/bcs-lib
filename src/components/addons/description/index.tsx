@@ -2,7 +2,7 @@ import React, { PropsWithChildren, ReactElement } from 'react';
 import { Box, ThemeProvider, Typography } from '@mui/material';
 import { theme } from '../../../themes'
 
-interface DescriptionProps {
+export interface DescriptionProps {
     title: string | ReactElement;
     variant: "h1" | "h2" | "h3";
     width?: number

@@ -1,18 +1,20 @@
 import { Navbar } from "./static/navbar";
-import { ConferenceDate } from "./info/datetime"
 import { Footer } from "./static/footer"
+import { ConferenceDate } from "./info/datetime"
 import { Heading } from "./info/heading"
-import { Logo } from "./addons/logo";
 import { ConferenceLocation } from "./info/location";
+import { UserCard } from "./info/usercard";
 import { ArticleCard } from './account/articalcard'
 
-export { Navbar, ConferenceDate, Footer, Heading, Logo, ConferenceLocation, ArticleCard }
-
-import { Link, Grid, Typography, Container } from "@mui/material"
- 
-export const mui = {
-    Link,
-    Grid,
-    Typography,
-    Container
+export { 
+    Navbar, ConferenceDate, Footer, 
+    Heading, ConferenceLocation, 
+    ArticleCard, UserCard 
 }
+
+import * as mui from "@mui/material"
+import { Logo, LogoProps } from "./addons/logo";
+import { Title } from "./addons/title";
+import { Description, DescriptionProps } from "./addons/description"; 
+
+export  { Logo, LogoProps, Title, Description, DescriptionProps, mui }
