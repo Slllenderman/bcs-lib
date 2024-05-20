@@ -18,7 +18,7 @@
     "size": "size-limit",
     "analyze": "size-limit --why",
     "sb": "storybook dev -p 6006",
-    "build-sb": "storybook build -o docs-build"
+    "build-sb": "storybook build -o docs"
   },
   "peerDependencies": {
     "@bauman-conference-library/interface": "^0.4.1",
