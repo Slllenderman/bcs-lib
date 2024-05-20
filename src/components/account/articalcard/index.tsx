@@ -9,7 +9,7 @@ export const ArticleCard = (props: iprops.ArticalCard) => {
         <ThemeProvider theme={theme}>
             <Box sx={{border: 1, borderColor: "primary.dark"}} padding="25px" width="1000px">
                 <Box display="flex" flexDirection="column">
-                    <Typography variant="title" fontSize_koef={props.font_size} marginBottom="25px">
+                    <Typography variant="title" fontK={props.font_size} marginBottom="25px">
                         { props.title }
                     </Typography>
                     <Box width="100%" sx={{border:0.5, borderBlockColor: 'lightgray'}} marginBottom="25px"></Box>
