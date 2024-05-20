@@ -1,12 +1,12 @@
 import React from "react"
 import { Container, Typography, Box, ThemeProvider, Button } from "@mui/material"
-import { props as iprops, useWidget } from "@bauman-conference-library/interface"
-import { theme } from "../../../themes"
+import { props as iprops, useWidget, useTheme } from "@bauman-conference-library/interface"
 
 export const ConferenceLocation = (props: iprops.ConferenceLoactionProps) => {
 
     props = useWidget(props)
-
+    const theme = useTheme(props)
+    
     return (
         <ThemeProvider theme={theme}>
             <Container variant="accent">

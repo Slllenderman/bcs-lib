@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import { Box, ThemeProvider, Typography } from '@mui/material'
-import { theme } from '../../../themes'
+import { useTheme } from '@bauman-conference-library/interface';
 
 export interface LogoProps {
     img: ReactElement,
@@ -10,6 +10,9 @@ export interface LogoProps {
 }
 
 export const Logo = (props: LogoProps) => {
+    
+    const theme = useTheme({})
+    
     return (
         <ThemeProvider theme={theme}>
             <Box display="flex" flexDirection="row" alignItems="center" width={props.width}>

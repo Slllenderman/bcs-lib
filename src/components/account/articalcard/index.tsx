@@ -1,10 +1,13 @@
 import React from "react"
-import { Box, Button, Typography, ThemeProvider } from '@mui/material'
-import { props as iprops } from '@bauman-conference-library/interface'
+import { Box, Button, Typography, ThemeProvider} from '@mui/material'
+import { props as iprops, useWidget, useTheme } from '@bauman-conference-library/interface'
 import { Link as RouterLink } from 'react-router-dom'
-import { theme } from '../../../themes'
 
 export const ArticleCard = (props: iprops.ArticalCard) => {
+    
+    props = useWidget(props)
+    const theme = useTheme(props)
+    
     return(
         <ThemeProvider theme={theme}>
             <Box sx={{border: 1, borderColor: "primary.dark"}} padding="25px" width="1000px">

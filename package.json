@@ -21,15 +21,15 @@
     "build-sb": "storybook build -o docs"
   },
   "peerDependencies": {
-    "@bauman-conference-library/interface": "^0.4.1",
+    "@bauman-conference-library/interface": "^0.5.2",
+    "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.14.16",
     "@mui/material": "^5.14.17",
-    "@emotion/styled": "^11.11.5",
-    "storybook": "^7.6.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "storybook": "^7.6.9"
   },
   "husky": {
     "hooks": {
@@ -78,7 +78,5 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.6.2",
     "typescript": "^3.9.10"
-  },
-  "dependencies": {
   }
 }

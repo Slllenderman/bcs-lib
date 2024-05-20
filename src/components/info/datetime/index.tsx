@@ -1,12 +1,12 @@
 import React from 'react'
-import { props as iprops, useWidget} from '@bauman-conference-library/interface'
-import { theme } from '../../../themes'
-import { Container, ThemeProvider, Typography, Box } from '@mui/material'
+import { props as iprops, useWidget, useTheme } from '@bauman-conference-library/interface'
+import { Container, Typography, Box, ThemeProvider } from '@mui/material'
 
 export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element => {
     
     props = useWidget(props)
-    
+    const theme = useTheme(props)
+
     const getFormatedDate = (sdate: Date|number, edate: Date|number): String => {
         enum months {
             января, февраля, марта, апреля, мая, июня, 
@@ -37,6 +37,8 @@ export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element =
         color: 'primary.main',
         fontWeight: 600
     }
+
+    
 
     return (
         !props.visibility ? <></> : 

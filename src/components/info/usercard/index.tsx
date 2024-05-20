@@ -1,12 +1,12 @@
 import React from "react";
 import { Box, CardMedia, Typography, ThemeProvider } from "@mui/material";
-import { props as iprops, useWidget } from "@bauman-conference-library/interface";
-import { theme } from '../../../themes'
+import { props as iprops, useWidget, useTheme } from "@bauman-conference-library/interface";
 
 export const UserCard = (props: iprops.ConferenceUserCard) => {
 
     props = useWidget(props)
-
+    const theme = useTheme(props)
+    
     return (
         <ThemeProvider theme={theme}>
             <Box width='270px'>

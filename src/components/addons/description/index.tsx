@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
 import { Box, ThemeProvider, Typography } from '@mui/material';
-import { theme } from '../../../themes'
+import { useTheme } from '@bauman-conference-library/interface';
 
 export interface DescriptionProps {
     title: string | ReactElement;
@@ -10,6 +10,9 @@ export interface DescriptionProps {
 }
 
 export const Description = (props: PropsWithChildren<DescriptionProps>) => {
+    
+    const theme = useTheme({})
+    
     return(
         <ThemeProvider theme={theme}>
             <Box display="flex" flexDirection="column" width={props.width ? props.width : 400 }>

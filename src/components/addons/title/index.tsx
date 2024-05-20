@@ -1,12 +1,13 @@
 import React from "react";
 import { Typography, ThemeProvider, Box } from "@mui/material";
-import { theme } from '../../../themes'
+import { useTheme } from "@bauman-conference-library/interface";
 
 export const Title = (props: { children: string, brushCount: number, align?: string}) => {
     
     const words: string[] = props.children.split(' ').map((word) => word.concat(' '));
     const brush_border = Math.min(words.length, props.brushCount);
-
+    const theme = useTheme({})
+        
     return (
         <ThemeProvider theme={theme}>
             <Box alignItems={props.align}>
