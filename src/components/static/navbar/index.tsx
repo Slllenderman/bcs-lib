@@ -1,12 +1,18 @@
 import React, { PropsWithChildren } from 'react';
-import { props as iprops } from '@bauman-conference-library/interface';
+import { props as iprops, useWidget } from '@bauman-conference-library/interface';
 import { Box, Button, ThemeProvider, Typography, Container } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom'
 import { Link as MuiLink } from '@mui/material'
 import { IIASU_icon } from './iiasu_icon';
-import { theme } from '../../../themes';
+import { useTheme } from "../../../themes"
+
+// Сломанная тема !!!!
 
 export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Element => {
+
+    props = useWidget(props)
+    const theme = useTheme(props)
+
     const sub_header = {
         display: 'flex',
         gap: '16px',
@@ -21,7 +27,7 @@ export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Eleme
         justifyContent: 'space-between',
         boxSizing: 'border-box',
         borderBottom: '1px solid black',
-        borderTop: '1px solid black'
+        borderTop: '1px solid black',
     }
 
     const iiasu_navinline = {
@@ -31,11 +37,12 @@ export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Eleme
     }
 
     return(
+        !props.visibility ? <></> :
         <ThemeProvider theme={theme}>
             <Container>
                 <Box width='100%'>
                     <Box sx={sub_header}>
-                        <MuiLink component={RouterLink} to='/' variant='h2' fontK={props.font_size} sx={iiasu_navinline}>
+                        <MuiLink underline='none' component={RouterLink} to='/' variant='h2' fontK={props.font_size} sx={iiasu_navinline}>
                             <IIASU_icon></IIASU_icon>
                             ИИАСУ'24
                         </MuiLink>

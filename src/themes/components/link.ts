@@ -8,7 +8,7 @@ export const link_theme = {
         }, 
         defaultProps: {
             variant: 'h2',
-            fontSize_koef: 1
+            fontK: 1
         }
     }
 }

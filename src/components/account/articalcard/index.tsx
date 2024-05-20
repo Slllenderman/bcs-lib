@@ -1,7 +1,8 @@
 import React from "react"
 import { Box, Button, Typography, ThemeProvider} from '@mui/material'
-import { props as iprops, useWidget, useTheme } from '@bauman-conference-library/interface'
+import { props as iprops, useWidget } from '@bauman-conference-library/interface'
 import { Link as RouterLink } from 'react-router-dom'
+import { useTheme } from "../../../themes"
 
 export const ArticleCard = (props: iprops.ArticalCard) => {
     

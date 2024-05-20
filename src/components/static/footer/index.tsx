@@ -1,12 +1,14 @@
 import React, { PropsWithChildren }  from "react";
 import { Box, Divider, Typography, ThemeProvider } from "@mui/material";
 import { props as iprops, useWidget } from '@bauman-conference-library/interface'
-import { theme } from '../../../themes'
+import { useTheme } from "../../../themes"
+
 
 export const Footer = (props: PropsWithChildren<iprops.ConferenceFooter>) => {
 
     props = useWidget(props)
-
+    const theme = useTheme(props)
+    
     const getYears = (start_date: Date|number, end_date: Date|number): String => {
         const sdate = new Date(start_date).getFullYear()
         const edate = new Date(end_date).getFullYear()
@@ -18,24 +20,24 @@ export const Footer = (props: PropsWithChildren<iprops.ConferenceFooter>) => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box>
+            <Box width={props.width}>
                 <Divider/>
-                <Box marginBottom='30px' marginTop='30px' display='flex' flexDirection='column'>
+                <Box marginBottom={`${30 * (props.height ? props.height : 1)}px`} marginTop={`${30 * (props.height ? props.height : 1)}px`} display='flex' flexDirection='column'>
                     {
                         React.Children.map(props.children, (logo) => (
-                            <Box display='flex' flexDirection='row' gap='150px' justifyItems='center' margin='0 auto'>
+                            <Box display='flex' flexDirection='row' gap={`${150 * (props.width ? props.width : 1)}px`} justifyItems='center' margin='0 auto'>
                                 { logo }
                             </Box>
                         ))
                     }
                 </Box>
                 <Divider/>
-                <Box display='flex' flexDirection='row' justifyItems='start' marginTop='30px'>
-                    <Typography variant="h4">
+                <Box display='flex' flexDirection='row' justifyItems='start' marginTop={`${30 * (props.height ? props.height : 1)}px`}>
+                    <Typography variant="h4" fontK={props.font_size}>
                         Почта для связи: {props.email}
                     </Typography>
                     <Box marginLeft='auto'>
-                        <Typography variant='h4'>
+                        <Typography variant='h4' fontK={props.font_size}>
                             { getYears(props.start_date, props.end_date) }
                         </Typography>
                     </Box>

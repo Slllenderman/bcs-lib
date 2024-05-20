@@ -1,6 +1,7 @@
 import React from 'react'
-import { props as iprops, useWidget, useTheme } from '@bauman-conference-library/interface'
+import { props as iprops, useWidget } from '@bauman-conference-library/interface'
 import { Container, Typography, Box, ThemeProvider } from '@mui/material'
+import { useTheme } from "../../../themes"
 
 export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element => {
     
@@ -43,7 +44,10 @@ export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element =
     return (
         !props.visibility ? <></> : 
         <ThemeProvider theme = {theme}>
-            <Container variant='accent' sx={{gap: '36px', padding: `56px 56px !important`}}>
+            <Container variant='accent' sx={{ gap: '36px', 
+                padding: `${56 * (props.width ? props.width : 1)}px 
+                          ${56 * (props.height ? props.height : 1)}px !important`,
+            }}>
                 <Box display='flex' alignItems='center'>
                     <Typography variant='h1' fontK={props.font_size}>
                         {getFormat(props.format)}

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
 import { Box, ThemeProvider, Typography } from '@mui/material';
-import { useTheme } from '@bauman-conference-library/interface';
+import { useTheme } from "../../../themes"
 
 export interface DescriptionProps {
     title: string | ReactElement;
