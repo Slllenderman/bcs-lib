@@ -7,8 +7,17 @@ export const Default: Story = {
     args: {
         start_date: new Date('2024-04-27'),
         end_date: new Date('2024-04-28'),
-        format: "both",
-        height: 1
+        format: "both"
+    }
+}
+
+export const AnotherDateFormat: Story = {
+    args: {
+        start_date: new Date('2024-04-29'),
+        end_date: new Date('2024-04-10'),
+        format: "online",
+        height: 0.7,
+        width: 0.9
     }
 }
 

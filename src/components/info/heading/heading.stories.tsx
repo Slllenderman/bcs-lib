@@ -2,7 +2,6 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Widget } from '@bauman-conference-library/interface'
 import { Heading } from '.';
 
-
 type Story = StoryObj<typeof Heading>;
 
 export const Default: Story = {

@@ -19,7 +19,7 @@ export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element =
         const eday: Number = eddate.getDate()
         const month: String = months[sddate.getMonth()]
         const year: String = sddate.getFullYear().toString() 
-        return eday >= sday && sddate.getMonth() == eddate.getMonth() ? 
+        return eday > sday && sddate.getMonth() == eddate.getMonth() ? 
                `${sday}–${eday} ${month} ${year}г.` : `${sday} ${month} ${year}г.`
     }
     
@@ -45,8 +45,9 @@ export const ConferenceDate = (props: iprops.ConferenceDateProps): JSX.Element =
         !props.visibility ? <></> : 
         <ThemeProvider theme = {theme}>
             <Container variant='accent' sx={{ gap: '36px', 
-                padding: `${56 * (props.width ? props.width : 1)}px 
-                          ${56 * (props.height ? props.height : 1)}px !important`,
+                padding: ` ${56 * (props.height ? props.height : 1)}px
+                           ${56 * (props.width ? 1 / props.width : 1)}px !important`,
+                width: `${1200 * (props.width ? props.width : 1)}px !important`
             }}>
                 <Box display='flex' alignItems='center'>
                     <Typography variant='h1' fontK={props.font_size}>

@@ -26,3 +26,18 @@ export const Default: Story = {
         ... new Widget()
     },
 };
+
+export const AnotherLinkCount: Story = {
+    args: {
+        children: [
+            <Link to="/" component={RouterLink} underline='none'>Организаторы</Link>,
+            <Link to="/" component={RouterLink} underline='none'>Программа</Link>,
+            <Link to="/" component={RouterLink} underline='none'>Тематика</Link>,
+            <Link to="/" component={RouterLink} underline='none'>Требования</Link>,
+            <Link to="/" component={RouterLink} underline='none'>ИИАСУ'23</Link>,
+            <Link to="/" component={RouterLink} underline='none'>Ещё одна ссылка</Link>,
+            <Link to="/" component={RouterLink} underline='none'>И ещё одна</Link>,
+        ],
+        ... new Widget()
+    },
+};

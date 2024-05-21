@@ -18,15 +18,24 @@ export const Description = (props: PropsWithChildren<DescriptionProps>) => {
             <Box display="flex" flexDirection="column" width={props.width ? props.width : 400 }>
                 { 
                     typeof props.title === "string" ?
-                    <Typography variant='subtitle1' fontK={1} marginBottom="20px">
+                    <Typography variant={
+                        (props.variant === 'h1' || typeof props.variant ==='undefined' ? 'subtitle1' : 
+                        props.variant === 'h2' ? 'h2' :'h3') as any
+                    } fontK={1} marginBottom={
+                        (props.variant === 'h1' || typeof props.variant ==='undefined' ? '25px' : 
+                        props.variant === 'h2' ? '20px' :'10px') 
+                    }>
                         { props.title }
                     </Typography>
                     : props.title
                 }
                 <Box marginLeft={`${props.shift}px`}>
-                    {
-                        React.Children.map(props.children, child => child)
-                    }
+                    <Typography variant={
+                        (props.variant === 'h1' || typeof props.variant ==='undefined' ? 'h2' : 
+                        props.variant === 'h2' ? 'h3' :'h4') as any
+                    }>
+                        { React.Children.map(props.children, child => child) }
+                    </Typography>
                 </Box>
             </Box>
         </ThemeProvider>
