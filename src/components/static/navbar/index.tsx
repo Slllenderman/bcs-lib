@@ -46,12 +46,21 @@ export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Eleme
                             <IIASU_icon></IIASU_icon>
                             ИИАСУ'24
                         </MuiLink>
-                        <Box sx={iiasu_navinline}> 
-                            <Button variant='outlined' onClick={props.signin_callback} sx={{textTransform:'none'}} color='info'>
-                                <Typography variant='h2' fontK={props.font_size}>
-                                    Войти
-                                </Typography>
-                            </Button>
+                        <Box sx={iiasu_navinline}>
+                            {
+                                props.is_authenticated ? 
+                                <Button variant='outlined' onClick={props.logout_callback} sx={{textTransform:'none'}} color='info'>
+                                    <Typography variant='h2' fontK={props.font_size}>
+                                        Выйти
+                                    </Typography>
+                                </Button> 
+                                :
+                                <Button variant='outlined' onClick={props.signin_callback} sx={{textTransform:'none'}} color='info'>
+                                    <Typography variant='h2' fontK={props.font_size}>
+                                        Войти
+                                    </Typography>
+                                </Button>
+                            }
                         </Box>
                     </Box>
                     <Box component='nav' sx={header}>

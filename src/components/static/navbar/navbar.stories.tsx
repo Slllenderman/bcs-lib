@@ -3,7 +3,6 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Link } from '@mui/material'
 import { Navbar } from '.';
 import { Link as RouterLink } from 'react-router-dom'
-import { Widget } from '@bauman-conference-library/interface';
 
 const meta: Meta = {
     title: 'Static/Header',
@@ -23,12 +22,12 @@ export const Default: Story = {
             <Link to="/" component={RouterLink} underline='none'>Требования</Link>,
             <Link to="/" component={RouterLink} underline='none'>ИИАСУ'23</Link>,
         ],
-        ... new Widget()
     },
 };
 
 export const AnotherLinkCount: Story = {
     args: {
+        is_authenticated: true,
         children: [
             <Link to="/" component={RouterLink} underline='none'>Организаторы</Link>,
             <Link to="/" component={RouterLink} underline='none'>Программа</Link>,
@@ -37,7 +36,6 @@ export const AnotherLinkCount: Story = {
             <Link to="/" component={RouterLink} underline='none'>ИИАСУ'23</Link>,
             <Link to="/" component={RouterLink} underline='none'>Ещё одна ссылка</Link>,
             <Link to="/" component={RouterLink} underline='none'>И ещё одна</Link>,
-        ],
-        ... new Widget()
+        ]
     },
 };
