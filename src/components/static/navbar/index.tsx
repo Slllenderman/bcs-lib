@@ -39,7 +39,7 @@ export const Navbar = (props : PropsWithChildren<iprops.NavbarProps>): JSX.Eleme
     return(
         !props.visibility ? <></> :
         <ThemeProvider theme={theme}>
-            <Container>
+            <Container sx={{maxWidth: '2000px !important'}}>
                 <Box width='100%'>
                     <Box sx={sub_header}>
                         <MuiLink underline='none' component={RouterLink} to='/' variant='h2' fontK={props.font_size} sx={iiasu_navinline}>
