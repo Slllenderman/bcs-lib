@@ -21,7 +21,7 @@
     "build-sb": "storybook build -o docs"
   },
   "peerDependencies": {
-    "@bauman-conference-library/interface": "^0.6.0",
+    "@bauman-conference-library/interface": "^0.6.6",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.14.16",
     "@mui/material": "^5.14.17",
