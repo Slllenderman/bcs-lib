@@ -18,8 +18,7 @@ export const Default: Story = {
         email: 'bmstuaiconf@yandex.ru',
         start_date: new Date('2023-04-27'),
         end_date: new Date('2024-04-28'),
-        children: 
-        <> 
+        children: [
             <Logo width='350px' variant='h3' img={
                 <Box>
                     <svg width="69" height="58" viewBox="0 0 69 58" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +40,7 @@ export const Default: Story = {
                 </Box>
             }>
                 Искусственный интеллект в автоматизированных системах управления и обработки данных
-            </Logo>
+            </Logo>,
             <Logo width='350px' variant='h3' img={
                 <Box>
                     <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,11 +52,11 @@ export const Default: Story = {
                 </Box>                
             }>
                 Кафедра ИУ5 Системы обработки информации и управления
-            </Logo>
+            </Logo>,
             <Logo width='350px' variant='h3' img={<img width='100px' height='100px' src='https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-gerb-mgtu-na-prozrachnom-fone-16.jpg'/> }>
                 Московский государственный технический университет им. Н.Э. Баумана
             </Logo>
-        </>
+        ]
     }
 }
 
@@ -66,23 +65,22 @@ export const AnotherLogosCount: Story = {
         email: 'bmstuaiconf@yandex.ru',
         start_date: new Date('2023-04-27'),
         end_date: new Date('2024-04-28'),
-        children: 
-        <> 
+        children: [
+            <Logo width='250px' variant='h5' img={<img width='70px' height='70px' src='https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-gerb-mgtu-na-prozrachnom-fone-16.jpg'/> }>
+                Московский государственный технический университет им. Н.Э. Баумана
+            </Logo>,
+            <Logo width='250px' variant='h5' img={<img width='70px' height='70px' src='https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-gerb-mgtu-na-prozrachnom-fone-16.jpg'/> }>
+                Московский государственный технический университет им. Н.Э. Баумана
+            </Logo>,
+            <Logo width='250px' variant='h5' img={<img width='70px' height='70px' src='https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-gerb-mgtu-na-prozrachnom-fone-16.jpg'/> }>
+                Московский государственный технический университет им. Н.Э. Баумана
+            </Logo>,
+            <Logo width='250px' variant='h5' img={<img width='70px' height='70px' src='https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-gerb-mgtu-na-prozrachnom-fone-16.jpg'/> }>
+                Московский государственный технический университет им. Н.Э. Баумана
+            </Logo>,
             <Logo width='250px' variant='h5' img={<img width='70px' height='70px' src='https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-gerb-mgtu-na-prozrachnom-fone-16.jpg'/> }>
                 Московский государственный технический университет им. Н.Э. Баумана
             </Logo>
-            <Logo width='250px' variant='h5' img={<img width='70px' height='70px' src='https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-gerb-mgtu-na-prozrachnom-fone-16.jpg'/> }>
-                Московский государственный технический университет им. Н.Э. Баумана
-            </Logo>
-            <Logo width='250px' variant='h5' img={<img width='70px' height='70px' src='https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-gerb-mgtu-na-prozrachnom-fone-16.jpg'/> }>
-                Московский государственный технический университет им. Н.Э. Баумана
-            </Logo>
-            <Logo width='250px' variant='h5' img={<img width='70px' height='70px' src='https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-gerb-mgtu-na-prozrachnom-fone-16.jpg'/> }>
-                Московский государственный технический университет им. Н.Э. Баумана
-            </Logo>
-            <Logo width='250px' variant='h5' img={<img width='70px' height='70px' src='https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-gerb-mgtu-na-prozrachnom-fone-16.jpg'/> }>
-                Московский государственный технический университет им. Н.Э. Баумана
-            </Logo>
-        </>
+        ]
     }
 }
