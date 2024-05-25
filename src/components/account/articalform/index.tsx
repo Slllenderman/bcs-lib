@@ -5,7 +5,7 @@ import { Title } from '../../addons/title'
 import { props as iprops, useWidget } from '@bauman-conference-library/interface'
 import { useTheme } from '../../../themes'
 
-export const ArticleForm = (props: { article: iprops.Artical, submit: (article: iprops.Artical) => void }) => {
+export const ArticleForm = (props: { article: iprops.Article, submit: (article: iprops.Article) => void }) => {
     
     props = useWidget(props)
     const theme = useTheme(props)

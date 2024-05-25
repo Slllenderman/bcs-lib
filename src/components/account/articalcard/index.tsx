@@ -4,31 +4,44 @@ import { props as iprops, useWidget } from '@bauman-conference-library/interface
 import { Link as RouterLink } from 'react-router-dom'
 import { useTheme } from '../../../themes'
 
-export const ArticleCard = (props: iprops.ArticalCard) => {
+export const ArticleCard = (props: iprops.ArticleCard) => {
 
     props = useWidget(props)
     const theme = useTheme(props)
 
+    const getRevState = (state: "reviewed" | "not reviewed"): String => {
+        const samples = {
+            "reviewed": "Рецензирование: cтатья проверена",
+            "not reviewed": "Рецензирование: cтатья не проверена",
+        }
+        return samples[state]
+    }
+
     return(
         <ThemeProvider theme={theme}>
-            <Box sx={{border: 1, borderColor: "primary.dark"}} padding="25px" width="1000px">
+            <Box sx={{border: 1, borderColor: "primary.dark"}} padding="35px" width="800px">
                 <Box display="flex" flexDirection="column">
-                    <Typography variant="title" fontK={props.font_size} marginBottom="25px">
+                    <Typography variant="subtitle1" fontK={props.font_size} marginBottom="15px">
                         { props.title }
+                    </Typography>
+                    <Typography variant="h3" marginBottom="25px">
+                    { `Секция: ${props.topic}` }
                     </Typography>
                     <Divider/>
                     <Box display="flex" flexDirection="row" marginTop='25px'>
-                        <Box marginRight="100px">
-                            <Typography variant="h5" marginBottom="10px" color="primary.dark">
-                                Рецензия: статья не проверена
+                        <Box>
+                            <Typography variant="h3" marginBottom="7px" color="primary.dark">
+                                { getRevState(props.review_state) }
                             </Typography>
-                            <Typography variant="h6">
-                                {props.last_update_date.toString()}
+                            <Typography variant="h5">
+                                {`Последнее изменение статьи: ${props.last_update_date.toLocaleDateString()} ${props.last_update_date.toLocaleTimeString()}`}
                             </Typography>
                         </Box>
-                        <Button component={RouterLink} to='#' variant="outlined">
-                            Редактировать
-                        </Button>
+                        <Box marginLeft='auto'>
+                            <Button component={RouterLink} to='#' variant="outlined">
+                                Редактировать
+                            </Button>
+                        </Box>
                     </Box>
                 </Box>
             </Box>

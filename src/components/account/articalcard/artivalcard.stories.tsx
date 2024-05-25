@@ -7,7 +7,8 @@ export const Default: Story = {
     args: {
         title: 'Название статьи',
         last_update_date: new Date(),
-        creation_date: new Date()
+        review_state: "not reviewed",
+        topic: 'секция конференции'
     }
 }
 
