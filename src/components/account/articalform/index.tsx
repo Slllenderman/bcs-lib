@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Divider, Typography, Input, ThemeProvider, Select, Grid } from '@mui/material'
+import { Box, Divider, Typography, Input, ThemeProvider, Select, Grid, Button } from '@mui/material'
 import { Option } from '@mui/base/Option'
 import { Title } from '../../addons/title'
 import { props as iprops, useWidget } from '@bauman-conference-library/interface'
@@ -30,7 +30,7 @@ export const ArticalForm = (props: { artical: iprops.Artical, submit: (artical: 
                         )
                     }
                 </Select>
-                <Typography marginTop='30px'>
+                <Typography variant='subtitle2' marginTop='30px'>
                     Файлы
                 </Typography>
                 <Grid container>
@@ -47,6 +47,18 @@ export const ArticalForm = (props: { artical: iprops.Artical, submit: (artical: 
                         <Input type='file'hidden placeholder={props.artical.auth_src ? props.artical.auth_src : 'Авторское заявление'}/>
                     </Grid>
                 </Grid>
+                <Box display='flex' justifyContent='center' gap='25px' alignContent='center' marginTop='30px'>
+                    <Button variant='contained' onClick={() => props.submit(props.artical)}>
+                        <Typography variant='h2' color='white' width='250px'>
+                            Сохранить статью
+                        </Typography>
+                    </Button>
+                    <Button variant='outlined' href={props.artical.back_href}>
+                        <Typography variant='h2' color='primary.dark' width='250px'>
+                            Отменить
+                        </Typography>
+                    </Button>
+                </Box>
             </Box>
         </ThemeProvider>
     )
