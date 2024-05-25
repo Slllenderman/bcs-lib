@@ -5,11 +5,12 @@ import { Heading } from "./info/heading"
 import { ConferenceLocation } from "./info/location";
 import { UserCard } from "./info/usercard";
 import { ArticleCard } from './account/articalcard'
+import { ArticleForm } from "./account/articalform";
 
 export { 
     Navbar, ConferenceDate, Footer, 
     Heading, ConferenceLocation, 
-    ArticleCard, UserCard 
+    ArticleCard, ArticleForm, UserCard 
 }
 
 import * as mui from "@mui/material"

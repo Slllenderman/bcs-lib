@@ -2,7 +2,7 @@ import {
     Navbar, ConferenceDate, Footer, 
     Heading, ConferenceLocation, 
     ArticleCard, UserCard,
-    Logo, LogoProps, Title, 
+    Logo, LogoProps, Title, ArticleForm,
     Description, DescriptionProps, mui 
 } from './components'
 
@@ -14,6 +14,6 @@ export {
     ArticleCard, UserCard,
     Logo, LogoProps, Title, 
     Description, DescriptionProps, mui,
-    ThemeProvider, useTheme  
+    ThemeProvider, useTheme, ArticleForm  
 }
 

@@ -1,17 +1,17 @@
-import { ArticalForm } from '.'
+import { ArticleForm } from '.'
 import { Meta, StoryObj } from '@storybook/react'
 
-type Story = StoryObj<typeof ArticalForm>
+type Story = StoryObj<typeof ArticleForm>
 
 export const Default: Story = {
     args: {
-        artical: {}
+        article: {}
     }
 }
 
 const meta: Meta = {
     title: 'Account/Conference article form',
-    component: ArticalForm
+    component: ArticleForm
 }
 
 export default meta
