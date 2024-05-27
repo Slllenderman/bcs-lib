@@ -38,8 +38,10 @@ export const ArticleCard = (props: iprops.ArticleCard) => {
                             </Typography>
                         </Box>
                         <Box marginLeft='auto'>
-                            <Button component={RouterLink} to='#' variant="outlined">
-                                Редактировать
+                            <Button component={RouterLink} to={props.update_href} variant="outlined">
+                                <Typography variant="h2" color='primary.dark'>
+                                    Редактировать
+                                </Typography>
                             </Button>
                         </Box>
                     </Box>

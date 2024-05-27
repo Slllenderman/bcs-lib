@@ -6,11 +6,14 @@ import { ConferenceLocation } from "./info/location";
 import { UserCard } from "./info/usercard";
 import { ArticleCard } from './account/articalcard'
 import { ArticleForm } from "./account/articalform";
+import { TopicsTable } from "./info/topicstable";
+import { InfoList, InfoListProps } from "./addons/list";
 
 export { 
     Navbar, ConferenceDate, Footer, 
     Heading, ConferenceLocation, 
-    ArticleCard, ArticleForm, UserCard 
+    ArticleCard, ArticleForm, UserCard,
+    InfoList, InfoListProps, TopicsTable
 }
 
 import * as mui from "@mui/material"
