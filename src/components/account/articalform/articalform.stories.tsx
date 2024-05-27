@@ -1,39 +1,33 @@
 import { ArticleForm } from '.'
 import { Meta, StoryObj } from '@storybook/react'
+import { Box } from '@mui/material'
+import React from 'react'
 
 type Story = StoryObj<typeof ArticleForm>
 
 export const Creation: Story = {
     args: {
-        topics: [
-            'topic1',
-            'topic2',
-            'topic3'
-        ],
         back_href: '#',
-        submit_callback: (title: string, description: string, topic: string, priority: number, files: File[]) => {
-            console.log(title, description, topic, priority, files)
+        submit_callback: (title: string, description: string, priority: number, files: File[]) => {
+            console.log(title, description, priority, files)
         }
     }
+    
 }
 
 export const Update: Story = {
+    decorators: (Story) => <Box><Story/></Box>,
     args: {
         title: 'Название статьи',
         description: 'Описание статьи',
-        topic: 'topic1',
-        topics: [
-            'topic1',
-            'topic2',
-            'topic3'
-        ],
         back_href: '#',
-        submit_callback: (title: string, description: string, topic: string, priority: number, files: File[]) => {
-            console.log(title, description, topic, priority, files)
+        submit_callback: (title: string, description: string, priority: number, files: File[]) => {
+            console.log(title, description, priority, files)
         },
         files: [
             {
-                name: 'Файл 1'
+                name: 'Файл 1',
+                link: '#'
             },
             {
                 name: 'Файл 2'

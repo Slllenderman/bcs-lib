@@ -25,7 +25,7 @@ export const ArticleCard = (props: iprops.ArticleCard) => {
                         { props.title }
                     </Typography>
                     <Typography variant="h3" marginBottom="25px">
-                    { `Секция: ${props.topic}` }
+                    { `Описание: ${props.description}` }
                     </Typography>
                     <Divider/>
                     <Box display="flex" flexDirection="row" marginTop='25px'>

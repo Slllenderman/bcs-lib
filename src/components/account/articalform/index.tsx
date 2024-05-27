@@ -3,7 +3,7 @@ import {
     Box, Divider, TextField, ThemeProvider, InputLabel,
     Select, Button, MenuItem, FormControl, Typography, IconButton
 } from '@mui/material'
-import { AttachFile, Delete } from '@mui/icons-material'
+import { AttachFile, Delete, UploadFile } from '@mui/icons-material'
 import { Title } from '../../addons/title'
 import { props as iprops, useWidget } from '@bauman-conference-library/interface'
 import { useTheme } from '../../../themes'
@@ -15,7 +15,7 @@ export const ArticleForm = (props: iprops.ArticleForm) => {
 
     const [title, setTitle] = useState(props.title)
     const [description, setDesc] = useState(props.description)
-    const [topic, setTopic] = useState(props.topic)
+    //const [topic, setTopic] = useState(props.topic)
     const [priority, setPriority] = useState(1)
     const [files, setFiles] = useState(props.files ? props.files : [] as File[])
 
@@ -38,10 +38,9 @@ export const ArticleForm = (props: iprops.ArticleForm) => {
         }
         if(!title) check_errors.title = 'Необходимо заполнить поле названия статьи';
         if(!description) check_errors.description = 'Необходимо заполнить поле описнаия статьи';
-        if(!topic) check_errors.topic = 'Необходимо заполнить поле секции статьи';
         if(!priority) check_errors.priority = 'Необходимо заполнить поле приоритета статьи';
         if(files.length == 0) check_errors.files = 'Необходимо добавить файлы статьи';
-        if(!title || !description || !topic || !priority || files.length == 0) {
+        if(!title || !description || !priority || files.length == 0) {
             setErrors(check_errors);
             return false
         } else {
@@ -56,7 +55,7 @@ export const ArticleForm = (props: iprops.ArticleForm) => {
                     Добавление статьи
                 </Title>
                 <Divider/>
-                <Box width='40%'>
+                <Box width='850px'>
                     <FormControl fullWidth={true} variant='outlined'>
                         <Typography variant='subtitle2' marginBottom='20px'>
                             Общее
@@ -67,7 +66,7 @@ export const ArticleForm = (props: iprops.ArticleForm) => {
                         <TextField error={errors.description != ''} label='Описание' defaultValue={props.description} multiline={true} rows={3} 
                         sx={{ marginBottom: '-3px',  "& .MuiOutlinedInput-root": { fontWeight: "500", fontFamily: 'Inter' }}} 
                         onChange={(e) => setDesc(e.target.value)} helperText={ errors.description }/>
-                        <InputLabel error={errors.topic != ''} sx={{ position: 'relative !important', top: '23px'}} id='topics-select'>Секция</InputLabel>
+                        {/*<InputLabel error={errors.topic != ''} sx={{ position: 'relative !important', top: '23px'}} id='topics-select'>Секция</InputLabel>
                         <Select error={errors.topic != ''} label='Секция' labelId='topics-select' defaultValue={props.topic}
                         sx={{ marginBottom: '-3px',  "& .MuiSelect-select": { fontWeight: "500", fontFamily: 'Inter' }}}
                         onChange={(e) => setTopic(e.target.value)}>
@@ -78,18 +77,18 @@ export const ArticleForm = (props: iprops.ArticleForm) => {
                                     </MenuItem>
                                 )
                             }
-                        </Select>
+                        </Select> */}
                         <InputLabel sx={{ position: 'relative !important', top: '23px'}} id='priority-select'>Приоритет проверки</InputLabel>
                         <Select error={errors.priority != ''} label='Приоритет проверки' labelId='priority-select' defaultValue={1}
                         sx={{ marginBottom: '20px',  "& .MuiSelect-select": { fontWeight: "500", fontFamily: 'Inter' }}}
                         onChange={(e) => setPriority(e.target.value as number)}>
-                            <MenuItem value={1}>Обычный</MenuItem>
-                            <MenuItem value={2}>Повышенный</MenuItem>
+                            <MenuItem key={1} value={1}>Низкий</MenuItem>
+                            <MenuItem key={2} value={2}>Высокий</MenuItem>
                         </Select>
                         <Typography variant='subtitle2' marginBottom='20px'>
                             Файлы
                         </Typography>
-                        <Box width='25%'>
+                        <Box width='250px'>
                             <Button variant='outlined' startIcon={<AttachFile/>} 
                                     sx={{'MuiButton-startIcon': { margin: 0 }}} component="label">
                                 <Typography variant='h3' noWrap color='primary.dark'>
@@ -101,10 +100,10 @@ export const ArticleForm = (props: iprops.ArticleForm) => {
                                 }} id='article-file-input' type='file' accept=".docx,.doc" multiple hidden/>
                             </Button>
                         </Box>
-                        <Box width='60%'>
+                        <Box width='450px'>
                             {
-                                files.map((file: File, index: number) => 
-                                    <Box display='flex' flexDirection='row' padding='10px' margin='10px 0'
+                                files.map((file: any, index: number) => 
+                                    <Box key={index} display='flex' flexDirection='row' padding='10px' margin='10px 0'
                                     sx={{backgroundColor: 'primary.light', borderRight: 5, borderColor: 'primary.dark'}}
                                     alignContent='center' justifyContent='start'>
                                         <Box display='flex' alignItems='center'>
@@ -113,6 +112,12 @@ export const ArticleForm = (props: iprops.ArticleForm) => {
                                             </Typography>
                                         </Box>
                                         <Box margin='0 0 0 auto'>
+                                            {
+                                                !file.link ? '' : 
+                                                <IconButton href={file.link}>
+                                                    <UploadFile/>
+                                                </IconButton>
+                                            }
                                             <IconButton onClick={() => {
                                                 let tmp = files.slice()
                                                 tmp.splice(index, 1)
@@ -129,7 +134,7 @@ export const ArticleForm = (props: iprops.ArticleForm) => {
                 <Box display='flex' justifyContent='center' gap='25px' alignContent='center' marginTop='30px'>
                     <Button variant='contained' onClick={() => {
                         if(checkRequired())
-                            props.submit_callback(title as string, description as string, topic as string, priority, files)                        
+                            props.submit_callback(title as string, description as string, priority, files as [])                        
                     }}>
                         <Typography variant='h2' color='white' width='250px'>
                             Сохранить статью

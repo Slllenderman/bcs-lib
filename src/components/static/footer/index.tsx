@@ -23,17 +23,15 @@ export const Footer = (props: PropsWithChildren<iprops.ConferenceFooter>) => {
             <Box width={props.width}>
                 <Divider/>
                 <Box marginBottom={`${30 * (props.height ? props.height : 1)}px`} marginTop={`${30 * (props.height ? props.height : 1)}px`} display='flex' flexDirection='column'>
-                    <Box display='flex' flexDirection='row' gap={`${150 * (props.width ? props.width : 1)}px`} justifyItems='center' margin='0 auto'>
-                        <Grid container spacing={24}>
-                            {                 
-                                React.Children.map(props.children, (logo) => (
-                                    <Grid item xs={4} alignSelf='center'>
-                                        { logo }
-                                    </Grid>
-                                ))
-                            }
-                        </Grid>
-                    </Box>
+                    <Grid container justifyContent="center" alignItems="center">
+                        {                 
+                            React.Children.map(props.children, (logo) => (
+                                <Grid item xs={4} display='flex' justifyContent='center'>
+                                    { logo }
+                                </Grid>
+                            ))
+                        }
+                    </Grid>
                 </Box>
                 <Divider/>
                 <Box display='flex' flexDirection='row' justifyItems='start' marginTop={`${30 * (props.height ? props.height : 1)}px`}>
