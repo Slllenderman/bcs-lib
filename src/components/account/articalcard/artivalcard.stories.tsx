@@ -13,6 +13,30 @@ export const Default: Story = {
     }
 }
 
+export const FileUpload: Story = {
+    args: {
+        title: 'Название статьи',
+        last_update_date: new Date(),
+        review_state: "not reviewed",
+        topic: 'секция конференции',
+        description: 'описание...',
+        files: [
+            {
+                name: 'Какой-то файл',
+                link: '#'
+            },
+            {
+                name: 'Какой-то файл',
+                link: '#'
+            },
+            {
+                name: 'Какой-то файл',
+                link: '#'
+            },
+        ]
+    }
+}
+
 const meta: Meta = {
     title: 'Account/Conference article',
     component: ArticleCard

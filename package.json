@@ -1,5 +1,5 @@
 {
-  "version": "0.7.3",
+  "version": "0.8.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -21,7 +21,7 @@
     "build-sb": "storybook build -o docs"
   },
   "peerDependencies": {
-    "@bauman-conference-library/interface": "^0.7.2",
+    "@bauman-conference-library/interface": "^0.8.0",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.14.16",
     "@mui/material": "^5.14.17",

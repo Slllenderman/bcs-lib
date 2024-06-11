@@ -1,5 +1,6 @@
 import React from "react"
-import { Box, Button, Typography, ThemeProvider, Divider } from '@mui/material'
+import { Box, Button, Typography, ThemeProvider, Divider, IconButton } from '@mui/material'
+import { UploadFile } from '@mui/icons-material'
 import { props as iprops, useWidget } from '@bauman-conference-library/interface'
 import { Link as RouterLink } from 'react-router-dom'
 import { useTheme } from '../../../themes'
@@ -44,6 +45,29 @@ export const ArticleCard = (props: iprops.ArticleCard) => {
                                 </Typography>
                             </Button>
                         </Box>
+                    </Box>
+                    <Box width='450px' marginTop='20px'>
+                        {
+                            props.files?.map((file: any, index: number) => 
+                                <Box key={index} display='flex' flexDirection='row' padding='10px' margin='10px 0'
+                                sx={{backgroundColor: 'primary.light', borderRight: 5, borderColor: 'primary.dark'}}
+                                alignContent='center' justifyContent='start'>
+                                    <Box display='flex' alignItems='center'>
+                                        <Typography variant='h3'>
+                                            { file.name }
+                                        </Typography>
+                                    </Box>
+                                    <Box margin='0 0 0 auto'>
+                                        {
+                                            !file.link ? '' : 
+                                            <IconButton href={file.link}>
+                                                <UploadFile/>
+                                            </IconButton>
+                                        }
+                                    </Box>
+                                </Box>
+                            )
+                        }
                     </Box>
                 </Box>
             </Box>
